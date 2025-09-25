@@ -18,6 +18,7 @@ print(id(x))    # id 1-го объекта
 print(id(i))    # id 2-го объекта
 print(id(u))    # id 3-го объекта
 print(id(o))    # id 4-го объекта
+print(o)
 
 # python создает новые объекты
 # присваивая им новый id,

@@ -6,7 +6,7 @@ while a < 10:  # последовательность Фибоначи
     else:
         print(a, '\n')
 
-# цикл for для колекции
+# цикл for для словаря
 fruits = {'banana': 2, 'apple': 49, 'lime': 37}
 for fruit, amount in fruits.items():
     if amount <= 10:
@@ -33,3 +33,20 @@ print()
 list_numbers_index_list = list(enumerate(list_numbers, 5))
 for i in list_numbers_index_list:
     print(i)
+print()
+
+# оператор continue
+for num in range(2, 10):
+    if num % 2 == 0:
+        print(f"Found an even number {num}")
+        continue  # заканчивает итерацию цикла
+    print(f"Found an odd number {num}")  # и начинает следующую
+print()
+
+# оператор break
+for n in range(2, 10):
+    for x in range(2, n):  # <-- то есть вот этот
+        if n % x == 0:
+            print(f"{n} equals {x} * {n//x}")
+            break  # заканчивает цикл, в котором находится
+print()

@@ -108,6 +108,7 @@ print(f2(3), "\n")  # [3]
 # для передачи орпеделенного значения/аргумента
 # определенной переменной функции
 
+# обозначение аргумента с ключевым словом:
 # ключевое_слово = аргумент | kwarg = value
 # Keyword argument or kwarg
 
@@ -118,5 +119,40 @@ def hello(age, name, profession='unemployed', place='Copenhagen'):
     print(f"I'm {age}, i'm {profession}", '\n')
 
 
-hello(16, 'Mark')  # аргумент
-# без ключевого слова - позиционный
+hello(16, 'Mark')  # аргумент без ключевого слова - позиционный
+hello(age=20, name='John')  # порядок аргументов с ключевыми словами
+hello(name='John', age=20)  # между собой не важен
+hello(30, 'Robert', place='New-York', profession='pilot')
+# аргументы с ключевыми словами должны указываться
+# после позиционных
+
+# функция при вызове может принмимать аргумент
+# только один раз
+
+# hello(10, age=1)
+# TypeError: hello() got multiple values for argument 'age'
+
+# все позиционые и все ключевые аргументы можно объеденить
+# позиционые объеденяются в список с помощью *
+# *имя_списка
+# ключевые объеденяются в кортеж с помощью **
+# **имя_кортежа
+
+
+def example(arg, *parg, **kwarg):
+    print(f"First argument - {arg}", '\n')
+    print(f"Position argmunts:")
+    for pa in parg:
+        print(f"{parg.index(pa) + 1}'s arg is {pa}")
+    print()
+    print(f"Keyword argmunts:")
+    for kw in kwarg:
+        print(f"{kw} : {kwarg[kw]}")
+    print()
+
+
+example(3233,             # arg
+        'Something',      # parg[1]
+        'Somewhere',      # parg[2]
+        First=1.0,        # kwarg[1]
+        Second="Second")  # kwarg[2]

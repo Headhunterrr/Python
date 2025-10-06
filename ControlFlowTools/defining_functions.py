@@ -150,9 +150,15 @@ def example(arg, *parg, **kwarg):
         print(f"{kw} : {kwarg[kw]}")
     print()
 
+# аргументы указываются в таком порядке
+# arg, *parg, **kwarg
 
-example(3233,             # arg
-        'Something',      # parg[1]
-        'Somewhere',      # parg[2]
-        First=1.0,        # kwarg[1]
-        Second="Second")  # kwarg[2]
+
+example(3233,                   # arg
+        'Something',            # parg[0]
+        'Somewhere',            # parg[1]
+        First=1.0,              # kwarg[0]
+        Second="Second kwarg")  # kwarg[1]
+
+# аргументы в переменную записываются
+# в порядке указанном при вызове функции

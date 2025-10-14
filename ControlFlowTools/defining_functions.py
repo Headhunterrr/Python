@@ -272,5 +272,9 @@ print(f3(10), '\n')
 pairs = [(1, 'one'), (3, 'three'), (4, 'four'), (2, 'two')]
 print(pairs, '\n')
 
-pairs.sort(key=lambda pp: pp[0], reverse=False)
+pairs.sort(key=lambda pp: pp[0])
 print(pairs, '\n')
+
+# ламбда-функцию можно использовать при сортировке
+# для извлечения значний с определенным ключем
+# или на определенной позиции

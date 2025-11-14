@@ -147,5 +147,40 @@ print(f"{ls2}\n")
 # списки можно использовать в качестве дэков (deque)
 # сокращенно от double-ended queue (двухсторонняя очередь)
 
+# from collections import deque
+
+ls3 = deque([1, 'one', 2, 'two'])
+print(f"{ls3}")
+
+# .appendleft() добавляет элемент в начало списка
+
+ls3.appendleft('zero')
+print(f"{ls3}")
+
+# .popleft() удаляет элемент в начале списка
+
+ls3.popleft()
+print(f"{ls3}\n")
+
+
+# ---------------------------------------------
+
+
+# генератор списков
+# можно сделать с помщью цикла for
+
+# пример списка квадратов чиесл
+
+squares = [x**2 for x in range(10)]
+print(f"{squares}\n")
+
+# пример списка кортежей
+
+squares_in_tuple = [(x, x**2) for x in range(10)]
+print(f"{squares_in_tuple}\n")
+
+# в [] перед for или if идет выполняемый код,
+# который может содержать for или if
+
 
 # ---------------------------------------------

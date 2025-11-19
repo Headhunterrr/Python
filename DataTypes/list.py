@@ -212,6 +212,3 @@ tuple_with_pi = [str(round(pi, i)) for i in range(1, 6)]
 print(f"{tuple_with_pi}\n")
 
 # ---------------------------------------------
-
-
-# ddldldldl

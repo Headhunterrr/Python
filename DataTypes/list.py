@@ -19,7 +19,6 @@ print(f"{ls}\n{ls1}\n")
 ls.append(7.5)
 print(f"{ls}\n{ls1}\n")
 
-
 # ---------------------------------------------
 
 
@@ -36,7 +35,7 @@ print(f"{ls}\n{ls1}\n")
 # .insert(i, x) добавляет элемент x на позицию с индексом i
 
 # элементы, ранее стоявший на позиции с индексом >=i, сдвиваются
-# на на позицию с индексом + 1 ("вправо")
+# на на позицию с индексом + 1 ("вправо на 1")
 
 
 ls1.insert(6, 32)
@@ -81,7 +80,7 @@ ls = [1, 23, 'asd']
 # .index(x, y, z) возвращает индекс элемента x,
 # если он находится в пределах от y до z (не включительно)
 
-print(f"Index 1 is {ls1.index(1, 1, 5)}\n")
+print(f"Index of '1' from 'ls2' is {ls1.index(1, 1, 5)}\n")
 
 
 # ---------------------------------------------
@@ -182,14 +181,22 @@ print(f"{squares}\n")
 # пример списка кортежей
 
 squares_in_tuple = [(x, x**2) for x in range(10)]
-print(f"{squares_in_tuple}\n")
+
+for x in squares_in_tuple:
+    print(x)
+
+print(f"\n{squares_in_tuple}\n")
 
 # после первого for или if могут записываться
 
 combination_nomber = [(x, y) for x in [3, 4, 5] for y in [7, 8, 9] if x != y]
-print(f"{combination_nomber}\n")
 
-# эквивалент данного выражения
+for x in combination_nomber:
+    print(x)
+
+print(f"\n{combination_nomber}\n")
+
+# эквивалент данного выражения:
 
 combination_nomber = []
 
@@ -198,7 +205,12 @@ for x in [3, 4, 5]:
         if x != y:
             combination_nomber.append((x, y))
 
-print(f"{combination_nomber}\n")
+for x in combination_nomber:
+    print(x)
+
+print(f"\n{combination_nomber}\n")
+
+# ---------------------------------------------
 
 # в списочных включениях можно записывать сложные выражения
 # вложенные функци
@@ -209,6 +221,8 @@ print(f"{combination_nomber}\n")
 # from math import pi
 
 tuple_with_pi = [str(round(pi, i)) for i in range(1, 6)]
+
+
 print(f"{tuple_with_pi}\n")
 
 # ---------------------------------------------

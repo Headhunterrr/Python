@@ -1,6 +1,7 @@
 from math import sqrt
 from math import pi
 from collections import deque
+
 # ----------------------------------------------------------------------------
 
 
@@ -308,7 +309,7 @@ matrix = [
     [10, 11, 12]
 ]
 
-[print(f"{matrix[i]}") for i in range(4)]
+[print(f"{matrix[i]}") for i in range(4)] 
 print()
 
 [[[print(f"{a[i]}", end=' ') for a in matrix], print()]

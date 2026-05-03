@@ -1,0 +1,1 @@
+print("Exemple print:\nHello, world!")

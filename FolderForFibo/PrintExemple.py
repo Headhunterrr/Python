@@ -1,1 +1,1 @@
-print("Exemple print:\nHello, world!")
+print("Exemple print:\nHello, world!\n")

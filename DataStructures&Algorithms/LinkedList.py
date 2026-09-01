@@ -1,0 +1,74 @@
+class LinkedList:
+    def __init__(self):
+        self.head = False
+        self.tail = False
+
+    class NodeLL:
+        def __init__(self, value, link_to_next=False):
+            self.value = value
+            self.link_to_next = link_to_next
+
+    def startapp(self, *value):
+        for val in value:
+            if not self.head:
+                self.head = self.tail = self.NodeLL(val)
+                continue
+            self.head = self.NodeLL(val, link_to_next=self.head)
+
+    def endapp(self, *value):
+        for val in value:
+            if not self.tail:
+                self.head = self.tail = self.NodeLL(val)
+                continue
+            self.tail.link_to_next = self.NodeLL(val)
+            self.tail = self.tail.link_to_next
+
+    def serch(self, value):
+        if not self.head:
+            print("Linked list is empty")
+            return False
+        ser_v, ser_n, pre_n, i = self.head.value, self.head.link_to_next, None, 1
+        while True:
+            if ser_v == value:
+                print(f"Value {value} on {i} position in Linked list")
+                return pre_n
+            if not ser_n:
+                print(f"Value {value} no in Linked list")
+                return False
+            i += 1
+            pre_n = ser_n
+            ser_v, ser_n = ser_n.value, ser_n.link_to_next
+
+    def print_linked_list(self):
+        if not self.head:
+            print("Libked list is empty")
+            return
+        ser_n, ser_v = self.head.link_to_next, self.head.value
+        print(self.head.value, end=' ')
+        while ser_n:
+            ser_v, ser_n = ser_n.value, ser_n.link_to_next
+            print(ser_v, end=' ')
+        print()
+
+    def delete(self, value):
+        point = self.serch(value)
+        if point is None:
+            self.head = self.head.link_to_next
+        elif point.link_to_next == self.tail:
+            point.link_to_next = False
+        elif point:
+            point.link_to_next = point.link_to_next.link_to_next
+        del point
+        print(f"This value was deleted")
+
+
+ll = LinkedList()
+ll.startapp(2, 1, 1)
+ll.endapp(8, 7, 5)
+ll.startapp(3)
+ll.endapp(5, 4, 7)
+ll.endapp(90)
+ll.serch(90)
+ll.print_linked_list()
+ll.delete(7)
+ll.print_linked_list()

@@ -27,32 +27,29 @@ class LinkedList:
         if not self.head:
             print("Linked list is empty")
             return False
-        ser_v, ser_n, pre_n, i = self.head.value, self.head.link_to_next, None, 1
+        ser_n, pre_n, i = self.head, False, 1
         while True:
-            if ser_v == value:
+            if ser_n.value == value:
                 print(f"Value {value} on {i} position in Linked list")
                 return pre_n
-            if not ser_n:
+            if not ser_n.value:
                 print(f"Value {value} no in Linked list")
                 return False
-            i += 1
-            pre_n = ser_n
-            ser_v, ser_n = ser_n.value, ser_n.link_to_next
+            ser_n, pre_n, i = ser_n.link_to_next, ser_n, i+1
 
     def print_linked_list(self):
         if not self.head:
             print("Libked list is empty")
             return
-        ser_n, ser_v = self.head.link_to_next, self.head.value
-        print(self.head.value, end=' ')
+        ser_n = self.head
         while ser_n:
-            ser_v, ser_n = ser_n.value, ser_n.link_to_next
-            print(ser_v, end=' ')
-        print()
+            print(ser_n.value, end=' ')
+            ser_n = ser_n.link_to_next
+        print('\n')
 
     def delete(self, value):
         point = self.serch(value)
-        if point is None:
+        if not point:
             self.head = self.head.link_to_next
         elif point.link_to_next == self.tail:
             point.link_to_next = False

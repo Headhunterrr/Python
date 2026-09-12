@@ -1,3 +1,7 @@
+import time
+import random
+
+
 class BinaryTree:
 
     def __init__(self, root=None):
@@ -40,11 +44,11 @@ class BinaryTree:
             if queue[0][0].right_node != None:
                 queue.append((queue[0][0].right_node, queue[0][1] + 1))
             if queue[0][1] == line:
-                print()
+                # print()
                 line += 1
-            print(queue[0][0].value, end=' ')
+            # print(queue[0][0].value, end=' ')
             queue.pop(0)
-        print('\n')
+        # print('\n')
         return line
 
     def SearchNode(self, value):
@@ -62,16 +66,14 @@ class BinaryTree:
             queue.pop(0)
 
 
-BT = BinaryTree()
+def timer(n):
+    ll = BinaryTree()
+    t1 = time.time()
+    for _ in range(10**n):
+        ll.AddNode(random.randint(0, 100)) 
+    ll.PrintTree()
+    t2 = time.time()
+    print(f"Execution print time for 10^{n}: {t2-t1:2}\n")
 
-BT.AddNode(10)
-BT.AddNode(15)
-BT.AddNode(7)
-BT.AddNode(9)
-BT.AddNode(14)
-BT.AddNode(13)
-BT.AddNode(16)
-BT.AddNode(8)
-print(BT.PrintTree(), 'is hight of Binary Tree')
-BT.SearchNode(8)
-BT.SearchNode(15)
+for i in range(3, 7):
+    timer(i)

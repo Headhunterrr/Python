@@ -1,3 +1,6 @@
+import random, time
+
+
 class LinkedList:
     def __init__(self):
         self.head = False
@@ -39,13 +42,13 @@ class LinkedList:
 
     def print_linked_list(self):
         if not self.head:
-            print("Libked list is empty")
+            # print("Libked list is empty")
             return
         ser_n = self.head
         while ser_n:
-            print(ser_n.value, end=' ')
+            # print(ser_n.value, end=' ')
             ser_n = ser_n.link_to_next
-        print('\n')
+        # print('\n')
 
     def delete(self, value):
         point = self.serch(value)
@@ -58,14 +61,16 @@ class LinkedList:
         del point
         print(f"This value was deleted")
 
+def timer(n):
+    ll = LinkedList()
+    t0 = time.time()
+    for i in range(10**n):
+        ll.startapp(i)
+    t1 = time.time()
+    ll.print_linked_list()
+    t2 = time.time()
+    print(f"Execution make array time for 10^{n}: {t1-t0:2}")
+    print(f"Execution print time for 10^{n}: {t2-t1:2}\n")
 
-ll = LinkedList()
-ll.startapp(2, 1, 1)
-ll.endapp(8, 7, 5)
-ll.startapp(3)
-ll.endapp(5, 4, 7)
-ll.endapp(90)
-ll.serch(90)
-ll.print_linked_list()
-ll.delete(7)
-ll.print_linked_list()
+for i in range(3, 7):
+    timer(i)

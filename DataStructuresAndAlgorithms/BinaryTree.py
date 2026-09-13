@@ -22,7 +22,7 @@ class BinaryTree:
 
         node = self.root_node
         while True:
-            if node.value < value:
+            if node.value <= value:
                 if node.right_node == None:
                     node.right_node = self.Node(value)
                     return
@@ -68,12 +68,14 @@ class BinaryTree:
 
 def timer(n):
     ll = BinaryTree()
-    t1 = time.time()
+    t0 = time.time()
     for _ in range(10**n):
         ll.AddNode(random.randint(0, 100)) 
+    t1 = time.time()
     ll.PrintTree()
     t2 = time.time()
-    print(f"Execution print time for 10^{n}: {t2-t1:2}\n")
+    print(f"\nMake array time for 10^{n}: {t1-t0:6f} sec")
+    print(f"Print time for 10^{n}:      {t2-t1:6f} sec")
 
 for i in range(3, 7):
     timer(i)

@@ -1,4 +1,5 @@
-import random, time
+import random
+import time
 
 
 class LinkedList:
@@ -61,16 +62,18 @@ class LinkedList:
         del point
         print(f"This value was deleted")
 
+
 def timer(n):
     ll = LinkedList()
     t0 = time.time()
     for i in range(10**n):
-        ll.startapp(i)
+        ll.startapp(random.randint(0, 100))
     t1 = time.time()
     ll.print_linked_list()
     t2 = time.time()
-    print(f"Execution make array time for 10^{n}: {t1-t0:2}")
-    print(f"Execution print time for 10^{n}: {t2-t1:2}\n")
+    print(f"\nMake array time for 10^{n}: {t1-t0:6f} sec")
+    print(f"Print time for 10^{n}:      {t2-t1:6f} sec")
 
-for i in range(3, 7):
+
+for i in range(3, 9):
     timer(i)

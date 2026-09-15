@@ -71,9 +71,10 @@ def timer(n):
     t1 = time.time()
     ll.print_linked_list()
     t2 = time.time()
-    print(f"\nMake array time for 10^{n}: {t1-t0:6f} sec")
-    print(f"Print time for 10^{n}:      {t2-t1:6f} sec")
+    print(f"\nMake array time for 10^{n}: {t1-t0:6f} sec"
+          f"\nPrint time for 10^{n}:      {t2-t1:6f} sec")
 
 
 for i in range(3, 9):
     timer(i)
+

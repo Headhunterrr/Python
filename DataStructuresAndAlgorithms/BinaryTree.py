@@ -70,12 +70,13 @@ def timer(n):
     ll = BinaryTree()
     t0 = time.time()
     for _ in range(10**n):
-        ll.AddNode(random.randint(0, 100)) 
+        ll.AddNode(random.randint(0, 100))
     t1 = time.time()
     ll.PrintTree()
     t2 = time.time()
-    print(f"\nMake array time for 10^{n}: {t1-t0:6f} sec")
-    print(f"Print time for 10^{n}:      {t2-t1:6f} sec")
+    print(f"\nMake array time for 10^{n}: {t1-t0:6f} sec"
+          f"\nPrint time for 10^{n}:      {t2-t1:6f} sec")
+
 
 for i in range(3, 7):
     timer(i)
